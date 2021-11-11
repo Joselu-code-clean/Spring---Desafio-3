@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,14 +20,26 @@ public class EverisCustomerRestController {
 	@Autowired
 	private EverisCustomerManagementServiceI customerService;
 	
-	@GetMapping(value = "/all}")
-	public List<EverisCustomer> getCustomerByDni() {
+	@GetMapping(value = "/getAllCustomer}")
+	public List<EverisCustomer> getAllCustomer() {
 		return customerService.findAll();
+	}
+	
+	
+	@GetMapping(value = "/{name}")
+	public List<EverisCustomer> searchCustomer(final @PathVariable String name) {
+		return customerService.searchByName(name);
 	}
 	
 	@PostMapping()
 	public void addCustomer(@RequestBody EverisCustomer newCustomer) {
 		customerService.insertNewCustomer(newCustomer);
+	}
+	
+	
+	@PostMapping()
+	public void deleteCustomer(@RequestBody Long id) {
+		customerService.deletedCustomerById(id);
 	}
 	
 	
