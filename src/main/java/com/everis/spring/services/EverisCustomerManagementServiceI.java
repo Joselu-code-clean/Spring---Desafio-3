@@ -16,6 +16,7 @@ public interface EverisCustomerManagementServiceI {
 
 	/**
 	 * Consulta todos los clientes.
+	 * @return 
 	 */
 	public void searchAllCustomers();
 
@@ -39,5 +40,6 @@ public interface EverisCustomerManagementServiceI {
 	public List<EverisCustomer> findAll();
 
 	public void deletedCustomerById(Long id);
+	
 	
 }
