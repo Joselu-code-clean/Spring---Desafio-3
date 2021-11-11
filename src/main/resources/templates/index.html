@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>MENU DE NAVEHACION</title>
+</head>
+<body>
+	<ul class="nav">
+	  <li class="nav-item">
+	    <a class="nav-link active" th:href="@{showAllCustomer}">Ver todos los clientes</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" th:href="@{/searchBy}">Buscar cliente por nombre</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" th:href="@{/insertView}">Añadir cliente</a>
+	  </li>
+	</ul>
+</body>
+</html>
