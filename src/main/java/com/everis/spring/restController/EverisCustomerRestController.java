@@ -14,7 +14,6 @@ import com.everis.spring.repository.EverisCustomer;
 import com.everis.spring.services.EverisCustomerManagementServiceI;
 
 @RestController
-@RequestMapping("/customers")
 public class EverisCustomerRestController {
 	
 	@Autowired
